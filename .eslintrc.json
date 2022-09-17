@@ -1,0 +1,24 @@
+{
+  "extends": "next/core-web-vitals",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "simple-import-sort", "import", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-shadow": ["error"],
+        "no-shadow": "off",
+        "no-undef": "off",
+        "max-len": [0, 80, 2],
+        "prettier/prettier": ["error", { "singleQuote": true }, { "usePrettierrc": true }],
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "off",
+        "simple-import-sort/imports": "warn",
+        "simple-import-sort/exports": "warn",
+        "import/first": "warn",
+        "import/newline-after-import": "warn",
+        "import/no-duplicates": "warn"
+      }
+    }
+  ]
+}
