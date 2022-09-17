@@ -1,11 +1,7 @@
-import React from 'react';
+import PostCards from '@/components/PostCards';
 
 function App() {
-  return (
-    <div className="App">
-      Hello
-    </div>
-  );
+  return <PostCards />;
 }
 
 export default App;
