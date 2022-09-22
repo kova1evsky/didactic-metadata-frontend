@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CellMeasurerCache, Index, InfiniteLoader } from 'react-virtualized';
 import styled from 'styled-components';
 
@@ -19,7 +19,7 @@ const VirtualizedGrid = (props: VirtualizedGridProps) => {
   const {
     entities,
     renderCard,
-    loadMoreEntities = () => [],
+    loadMoreEntities = async () => [],
     columnCount = 1,
     rowGap = '1rem',
     columnGap = '1rem',
