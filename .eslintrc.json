@@ -5,11 +5,11 @@
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-shadow": ["warn"],
         "no-shadow": "off",
         "no-undef": "off",
         "max-len": [0, 80, 2],
-        "prettier/prettier": ["error", { "singleQuote": true }, { "usePrettierrc": true }],
+        "prettier/prettier": ["warn", { "singleQuote": true }, { "usePrettierrc": true }],
         "simple-import-sort/imports": "warn",
         "simple-import-sort/exports": "warn",
         "import/first": "warn",

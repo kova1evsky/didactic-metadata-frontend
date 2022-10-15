@@ -2,11 +2,12 @@ import { FC, useState } from 'react';
 
 import { API } from '@/api';
 import { Post } from '@/api/rest/posts';
+import { POSTS } from '@/components/Draggable/data';
+import DraggableColumn from '@/components/Draggable/DraggableColumn';
 import { PostCard } from '@/components/PostCards/components';
-import VirtualizedGrid from '@/UI/VirtualizedGrid';
 
 const PostCards: FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>(POSTS);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
 
@@ -27,16 +28,20 @@ const PostCards: FC = () => {
   };
 
   return (
-    <VirtualizedGrid
-      entities={posts}
-      loadMoreEntities={loadMorePosts}
-      columnCount={2}
-      renderCard={(post) => <PostCard post={post} />}
-      rowGap={'10px'}
-      columnGap={'10px'}
-      height={'600px'}
-      width={'800px'}
+    <DraggableColumn
+      cards={posts}
+      renderCard={(card) => <PostCard post={card} />}
     />
+    // <VirtualizedGrid
+    //   entities={posts}
+    //   loadMoreEntities={loadMorePosts}
+    //   columnCount={2}
+    //   renderCard={(post) => <PostCard post={post} />}
+    //   rowGap={'10px'}
+    //   columnGap={'10px'}
+    //   height={'600px'}
+    //   width={'800px'}
+    // />
   );
 };
 

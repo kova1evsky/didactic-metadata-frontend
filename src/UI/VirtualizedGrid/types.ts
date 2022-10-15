@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface CellRendererParams {
   columnIndex: number;
   isScrolling: boolean;
@@ -5,5 +7,5 @@ export interface CellRendererParams {
   key: string;
   parent: Object;
   rowIndex: number;
-  style: Object;
+  style: React.CSSProperties;
 }
